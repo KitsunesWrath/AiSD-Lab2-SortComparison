@@ -2,6 +2,7 @@ package main.java.aisd.lab2.sortcomparison;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class QuickSortIterative implements SortingAlgorithm {
 
@@ -55,27 +56,56 @@ public class QuickSortIterative implements SortingAlgorithm {
 
     }
 
+    private static int choosePivotIndex(double[] data, int leftIndex, int rightIndex) {
+        int firstIndex = leftIndex;
+        int lastIndex = rightIndex;
+
+        double firstValue = data[leftIndex];
+        double lastValue = data[rightIndex];
+        if (lastIndex - firstIndex == 1) {
+            return firstIndex;
+        } else {
+            Random rand = new Random();
+            int middleIndex = rand.nextInt((lastIndex - firstIndex) - 1) + firstIndex + 1;
+            double randomValue = data[middleIndex];
+            if ((firstValue < randomValue && randomValue < lastValue) || (lastValue < randomValue && randomValue < firstValue))
+                return middleIndex;
+            else if ((randomValue < firstValue && firstValue < lastValue) || (lastValue < firstValue && firstValue < randomValue))
+                return firstIndex;
+            else
+                return lastIndex;
+        }
+    }
+
+
     private int splitData(double[] data, int start, int end) {
-        int left = start + 1;
+        int left = start;
         int right = end;
+        int pivot = choosePivotIndex(data, start, end);
+       /* if(pivot == start){
+            left = start + 1;
+        }
+        if(pivot == end) {
+            right = end - 1;
+        }*/
 
         while (left < right) {
-            while (left < right && data[left] < data[start]) {
+            while (left < right && data[left] < data[pivot]) {
                 left++;
             }
 
-            while (left < right && data[right] >= data[start]) {
+            while (left < right && data[right] >= data[pivot]) {
                 right--;
             }
 
             swap(data, left, right);
         }
 
-        if (data[left] >= data[start]) {
+        if (left > 0 && data[left] >= data[pivot] && left > pivot) {
             left--;
         }
 
-        swap(data, start, left);
+        swap(data, pivot, left);
 
         return left;
     }
