@@ -90,5 +90,39 @@ public class QuickSortIterativeTest {
         assertArrayEquals(expected, result, 0);
     }
 
+    @Test
+    public void shouldReturnSortedArray_whenPivotIsLastElement() {
+        //given
+        double[] givenVector = {2, 5, 7, 3};
+        //when
+        double[] result = quickSortIterative.sort(givenVector);
+        //then
+        double[] expected = {2, 3, 5, 7};
+        assertArrayEquals(expected, result, 0);
+    }
+
+    @Test
+    public void shouldReturnSortedArray_whenPivotIsFirstElement() {
+        //given
+        double[] givenVector = {3, 5, 7, 2};
+        //when
+        double[] result = quickSortIterative.sort(givenVector);
+        //then
+        double[] expected = {2, 3, 5, 7};
+        assertArrayEquals(expected, result, 0);
+    }
+
+    @Test
+    public void shouldReturnSortedArray_whenPivotIsMiddleElement() {
+        //given
+        double[] givenVector = {7, 9, 8, 11};
+        //when
+        double[] result = quickSortIterative.sort(givenVector);
+        //then
+        double[] expected = {7, 8, 9, 11};
+        assertArrayEquals(expected, result, 0);
+    }
+
+
 }
 

@@ -64,9 +64,9 @@ public class InsertSortTest {
         //given
         double[] givenVector = {11};
         //when
-        double [] result = insertSort.sort(givenVector);
+        double[] result = insertSort.sort(givenVector);
         //then
-        double [] expected = {11};
+        double[] expected = {11};
         assertArrayEquals(expected, result, 0);
     }
 }
