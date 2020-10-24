@@ -40,18 +40,19 @@ public class QuickSortIterative implements SortingAlgorithm {
                 pivot = splitData(data, left, right);
 
                 if (pivot - 1 > left) {
-                    starts.add(left);
-                    ends.add(pivot - 1);
+                    starts.add(n, left);
+                    ends.add(n, pivot - 1);
                     n++;
                 }
 
                 if (pivot + 1 < right) {
-                    starts.add(pivot + 1);
-                    ends.add(right);
+                    starts.add(n, pivot + 1);
+                    ends.add(n, right);
                     n++;
                 }
             }
         }
+
     }
 
     private int splitData(double[] data, int start, int end) {
