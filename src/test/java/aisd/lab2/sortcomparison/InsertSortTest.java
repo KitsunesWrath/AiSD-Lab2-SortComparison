@@ -1,8 +1,6 @@
 package test.java.aisd.lab2.sortcomparison;
 
 import main.java.aisd.lab2.sortcomparison.InsertSort;
-import main.java.aisd.lab2.sortcomparison.QuickSortIterative;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 

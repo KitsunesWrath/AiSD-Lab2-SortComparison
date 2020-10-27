@@ -82,12 +82,6 @@ public class QuickSortIterative implements SortingAlgorithm {
         int left = start;
         int right = end;
         int pivot = choosePivotIndex(data, start, end);
-       /* if(pivot == start){
-            left = start + 1;
-        }
-        if(pivot == end) {
-            right = end - 1;
-        }*/
 
         while (left < right) {
             while (left < right && data[left] < data[pivot]) {
