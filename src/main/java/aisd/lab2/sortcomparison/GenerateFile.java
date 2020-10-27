@@ -9,7 +9,7 @@ public class GenerateFile {
 
     public void generateFileForInsertSort(int vectorLength) {
         try {
-            BufferedWriter dataFile = new BufferedWriter(new FileWriter("src/outputData/InsertSortOutput", true));
+            BufferedWriter dataFile = new BufferedWriter(new FileWriter("src/outputData/InsertSortOutput.txt", true));
             InsertSort insertSort = new InsertSort();
             double bestCaseTime = 0, worstCaseTime = 0, averageCaseTime = 0;
             for (int i = 0; i < 10; i++) {
@@ -33,7 +33,7 @@ public class GenerateFile {
 
     public void generateFileForQuickSort(int vectorLength) {
         try {
-            BufferedWriter dataFile = new BufferedWriter(new FileWriter("src/outputData/QuickSortOutput", true));
+            BufferedWriter dataFile = new BufferedWriter(new FileWriter("src/outputData/QuickSortOutput.txt", true));
             QuickSortIterative quickSortIterative = new QuickSortIterative();
             double bestCaseTime = 0, worstCaseTime = 0, averageCaseTime = 0;
             for (int i = 0; i < 10; i++) {
